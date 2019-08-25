@@ -27,10 +27,6 @@ public class JavaApplication8 {
         // TODO code application logic here
         
         Client c=new Client();
-       
-        
-        
-        
         
          try{
           Connection con=null;
@@ -42,26 +38,27 @@ public class JavaApplication8 {
             con=DriverManager.getConnection("jdbc:oracle:thin:@144.217.163.57:1521:XE", "sales", "anypw");
              
           //CLIENT CLASS
+            
+                 Double noclient2=97.0;
+            String nameclient2="Asma";
+            String notelephone2= "12345678";
+            
+            c.clientInsert(con, stm, noclient2, nameclient2, notelephone2);
+             
             String nameclient =  "ASMAROKADIYA";
             String notelephone ="789654123";
             Double noclient=97.0;
             
             c.clientUpdate(con, stm, nameclient, notelephone, noclient);
             
-            Double noclient2=97.0;
-            String nameclient2="Asma";
-            String notelephone2= "12345678";
-            
-            c.clientInsert(con, stm, noclient2, nameclient2, notelephone2);
-             
+       
             int noclient3 = 97;
             c.clientDelete(con, stm, noclient3);
              
-            c.clientList(con, stmt);
-             
+            c.clientList(con, stmt);   
              
              int noclient4=60;
-            c.clientSingle(con, stm, noclient4);
+             c.clientSingle(con, stm, noclient4);
        
              
         } catch (SQLException ex) {
