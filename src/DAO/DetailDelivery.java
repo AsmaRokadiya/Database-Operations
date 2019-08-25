@@ -9,10 +9,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
+
 /**
  *
  * @author 1895321
  */
+import net.sf.json.JSONObject;
 public class DetailDelivery {
     public void ddinsert(Connection con,PreparedStatement stm,int nodelivery, int noorder, int noitem,int quantitydelivery) throws SQLException{
         
@@ -23,8 +26,15 @@ public class DetailDelivery {
         stm.setInt(3, noitem);
         stm.setInt(4, quantitydelivery);
         
+        int rs= stm.executeUpdate();
+        JSONObject mainObject=new JSONObject();
+        String str= rs + " row(s) inserted";
+        mainObject.accumulate("message", str);
+        System.out.println(mainObject);
         
-        
+         stm.close();
+      // stmt.close();
+        con.close();  
         
     }
     

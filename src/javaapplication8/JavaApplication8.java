@@ -38,7 +38,7 @@ public class JavaApplication8 {
             con=DriverManager.getConnection("jdbc:oracle:thin:@144.217.163.57:1521:XE", "sales", "anypw");
              
           //CLIENT CLASS
-            
+           /* 
                  Double noclient2=97.0;
             String nameclient2="Asma";
             String notelephone2= "12345678";
@@ -59,7 +59,17 @@ public class JavaApplication8 {
              
              int noclient4=60;
              c.clientSingle(con, stm, noclient4);
+             */
+             DetailDelivery dd=new DetailDelivery();
+             
+             int nodelivery=0004;
+             int noorder=30;
+             int noitem=50;
+             int qdelivery=80;             
+             
+             dd.ddinsert(con, stm, nodelivery, noorder, noitem, qdelivery);
        
+             
              
         } catch (SQLException ex) {
             Logger.getLogger(DAO.Client.class.getName()).log(Level.SEVERE, null, ex);

@@ -89,10 +89,7 @@ public class Client {
     while(rs.next()){
         System.out.println(rs.getInt("noclient") + " " + rs.getString("nameclient") + " " + rs.getString("notelephone"));
     }
-       stm.close();
-      // stmt.close();
-        con.close();  
-        
+
     }
           
 }
